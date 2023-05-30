@@ -122,6 +122,8 @@ export interface VideoPlayerProps extends VideoProperties {
    * Fired when the video begins playing after the play/pause button is pressed
    */
   onPlay?: () => void;
+  onPressRewind?: () => void;
+  onPressForward?: () => void;
 
   /**
    * Hide controls after X amount of time in milliseconds

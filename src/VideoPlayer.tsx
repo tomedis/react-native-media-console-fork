@@ -47,6 +47,8 @@ export const VideoPlayer = (props: VideoPlayerProps) => {
     onExitFullscreen = () => {},
     onHideControls = () => {},
     onShowControls = () => {},
+    onPressRewind = () => {},
+    onPressForward = () => {},
     onPause,
     onPlay,
     onLoad,
@@ -426,12 +428,8 @@ export const VideoPlayer = (props: VideoPlayerProps) => {
               togglePlayPause={togglePlayPause}
               resetControlTimeout={resetControlTimeout}
               showControls={showControls}
-              onPressRewind={() =>
-                videoRef?.current?.seek(currentTime - rewindTime)
-              }
-              onPressForward={() =>
-                videoRef?.current?.seek(currentTime + rewindTime)
-              }
+              onPressRewind={onPressRewind}
+              onPressForward={onPressForward}
             />
             <BottomControls
               animations={animations}
