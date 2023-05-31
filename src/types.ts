@@ -214,6 +214,7 @@ export interface VideoPlayerProps extends VideoProperties {
    * @default null
    */
   navigator?: any;
+  textHeader?: string;
 
   /**
    * Pass ref to the `<Video/>` component

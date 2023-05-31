@@ -68,6 +68,7 @@ export const VideoPlayer = (props: VideoPlayerProps) => {
     disablePlayPause = false,
     disableSeekButtons = false,
     navigator,
+    textHeader = '',
   } = props;
 
   const mounted = useRef(false);
@@ -418,6 +419,7 @@ export const VideoPlayer = (props: VideoPlayerProps) => {
               onBack={events.onBack}
               resetControlTimeout={resetControlTimeout}
               showControls={showControls}
+              textHeader={textHeader}
             />
             <PlayPause
               animations={animations}

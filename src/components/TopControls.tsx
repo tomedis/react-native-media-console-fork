@@ -6,6 +6,7 @@ import {
   StyleSheet,
   View,
   GestureResponderHandlers,
+  Text,
 } from 'react-native';
 import {Volume} from './Volume';
 import {Back} from './Back';
@@ -24,6 +25,7 @@ interface TopControlProps {
   volumePosition: number;
   onBack: () => void;
   resetControlTimeout: () => void;
+  textHeader?: () => string;
 }
 
 export const TopControls = memo(
@@ -38,15 +40,23 @@ export const TopControls = memo(
     volumeTrackWidth,
     onBack,
     resetControlTimeout,
+    textHeader,
   }: TopControlProps) => {
     const backControl = disableBack ? (
       <NullControl />
     ) : (
-      <Back
-        showControls={showControls}
-        onBack={onBack}
-        resetControlTimeout={resetControlTimeout}
-      />
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Back
+          showControls={showControls}
+          onBack={onBack}
+          resetControlTimeout={resetControlTimeout}
+        />
+        {
+          !!textHeader && (
+            <Text style={{ color: '#d6d6d6', fontSize: 19, marginLeft: 10 }} numberOfLines={1}>{textHeader}</Text>
+          )
+        }
+      </View>
     );
 
     const volumeControl = disableVolume ? (
