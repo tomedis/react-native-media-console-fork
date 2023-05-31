@@ -25,7 +25,7 @@ interface TopControlProps {
   volumePosition: number;
   onBack: () => void;
   resetControlTimeout: () => void;
-  textHeader?: () => string;
+  textHeader?: string;
 }
 
 export const TopControls = memo(
